@@ -7,15 +7,15 @@ import org.junit.jupiter.api.Test;
 public class GildedRoseADefaultItemTest {
 
     public static final String DEFAULT_ITEM_NAME = "DEFAULT_ITEM";
-    public static final int DEFAULT_SELLIN = 15;
+    public static final int UN_EXPIRED_SELLIN = 15;
     public static final int DEFAULT_QUALITY = 3;
     public static final int EXPIRED_SELLIN = -1;
 
     @Test
     public void for_unexpiredDefaultItem_both_quality_and_sellInDecreasesBy1() {
-        final GildedRose app = createGildedRoseWithAnItem(DEFAULT_ITEM_NAME, DEFAULT_SELLIN, DEFAULT_QUALITY);
+        final GildedRose app = createGildedRoseWithAnItem(DEFAULT_ITEM_NAME, UN_EXPIRED_SELLIN, DEFAULT_QUALITY);
         app.updateQuality();
-        final Item expected = new Item(DEFAULT_ITEM_NAME, DEFAULT_SELLIN - 1, DEFAULT_QUALITY - 1);
+        final Item expected = new Item(DEFAULT_ITEM_NAME, UN_EXPIRED_SELLIN - 1, DEFAULT_QUALITY - 1);
         assertItem(expected, app.items[0]);
     }
 
