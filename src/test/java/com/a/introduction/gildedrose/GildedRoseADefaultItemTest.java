@@ -20,7 +20,7 @@ public class GildedRoseADefaultItemTest {
     }
 
     @Test
-    public void for_unexpiredDefaultItem_onExpiration_qualityDecreasesBy2_and_sellInDecreasesBy1() {
+    public void for_expiredDefaultItem_qualityDecreasesBy2_and_sellInDecreasesBy1() {
         final GildedRose app = createGildedRoseWithAnItem(DEFAULT_ITEM_NAME, EXPIRED_SELLIN, DEFAULT_QUALITY);
         app.updateQuality();
         final Item expected = new Item(DEFAULT_ITEM_NAME, EXPIRED_SELLIN - 1, DEFAULT_QUALITY - 2);
